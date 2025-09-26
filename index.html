@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Smart Study Planner</h1>
+
+    <!-- Task Input -->
+    <div class="task-input">
+      <input type="text" id="taskName" placeholder="Enter subject/topic">
+      <input type="date" id="taskDate">
+      <input type="time" id="taskTime"> <!-- ⏰ Added Time Field -->
+      <select id="taskPriority">
+        <option value="High">High Priority</option>
+        <option value="Medium">Medium Priority</option>
+        <option value="Low">Low Priority</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <input type="text" id="searchBox" placeholder="🔍 Search tasks..." onkeyup="renderTasks()">
+      <select id="filterPriority" onchange="renderTasks()">
+        <option value="All">All Priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-container">
+      <p>Progress: <span id="progressText">0%</span></p>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <h2>My Study Tasks</h2>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
